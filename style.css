@@ -2,8 +2,8 @@
     --white: hsl(0, 0%, 100%);
     --very-dark-desaturated-blue: hsl(238, 29%, 16%);
     --soft-red: hsl(14, 88%, 65%);
-    --soft-violet: hsl(273, 75%, 66%);
-    --soft-blue: hsl(240, 73%, 65%);
+    --soft-violet: #af67e9;
+    --soft-blue: #6565e7;
 }
 
 html {
@@ -19,7 +19,7 @@ html {
 
 body {
     font-family: 'Kumbh Sans', sans-serif;
-    background-color: var(--soft-violet);
+    /* background-color: var(--soft-violet); */
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,12 @@ body {
     bottom: 0;
     right: 0;
     left: 0;
+    /* Created with https://www.css-gradient.com */
+    background-color: #6666E7;
+    background: linear-gradient(to top, #6666E7, #AF67E9);
+    background-attachment: fixed;
 }
+
 
 .faq {
     display: flex;
@@ -39,28 +44,50 @@ body {
     background-color: var(--white);
     border-radius: 20px;
     width: 20.4375rem;
-    padding: 0 24px 48px 24px;
+    padding: 0 24px 45px 24px;
 }
 
 .faq__hero {
+    width: 100%;
     position: relative;
 }
 
-.faq__image-woman {
+.faq__hero-background {
+    height: 11.3125rem;
+    width: 17.4375rem;
+    background-image: url(images/illustration-woman-online-mobile.svg);
+    background-repeat: no-repeat;
     position: absolute;
-    top: -108px;
+    top: -6.6875rem;
+    left: 1.3125rem;
 }
+
+.faq__hero-background::before {
+    content: '';
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 108px;
+    left: 0px;
+    padding: 200px;
+}
+
+/* .faq__hero-shadow {
+    height: 104px;
+    width: 279px;
+} */
 
 .faq__content {
     width: 100%;
-    padding-top: 4px;
+    padding-top: 113px;
+    align-content: center;
 }
 
 .faq__title {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 700;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0 13px 0;
 }
 
 input {
@@ -76,7 +103,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 17px 0;
     cursor: pointer;
     user-select: none;
 }
@@ -144,4 +171,57 @@ input:checked ~ .faq__answer {
 .attribution a:hover {
     box-shadow: inset 100px 0 0 0 hsl(228, 45%, 44%);
     color: hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width: 950px) {
+    .faq {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        width: 920px;
+        border-radius: 20px;
+        padding: 45px 0 63px 0;
+    }
+    
+    .faq__hero-background {
+        background-image: url(images/illustration-woman-online-desktop.svg);
+        background-repeat: no-repeat;
+        height: 360px;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-position-x: -85px;
+    }
+
+    .faq__hero-background::after {
+        position: absolute;
+        background-image: url(images/illustration-box-desktop.svg);
+    }
+    
+    .faq__hero-shadow {
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+        height: 104px;
+        width: 100%;
+        /* position: absolute;
+        left: 18px; */
+        background-position-y: -40px;
+    }
+
+    .faq__content {
+        width: 100%;
+        padding: 0 113px 0 14px;
+    }
+
+    .faq__title {
+        font-size: 2rem;
+        text-align: left;
+        margin: 0 0 0 0;
+        padding: 0 0 20px 0;
+    }
+
+    .faq__label {
+        font-size: .9rem;
+    }
 }
