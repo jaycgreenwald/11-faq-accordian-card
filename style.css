@@ -19,7 +19,7 @@ html {
 
 body {
     font-family: 'Kumbh Sans', sans-serif;
-    /* background-color: var(--soft-violet); */
+    background-color: var(--soft-blue);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -30,11 +30,9 @@ body {
     right: 0;
     left: 0;
     /* Created with https://www.css-gradient.com */
-    background-color: #6666E7;
     background: linear-gradient(to top, #6666E7, #AF67E9);
     background-attachment: fixed;
 }
-
 
 .faq {
     display: flex;
@@ -43,44 +41,31 @@ body {
     align-items: center;
     background-color: var(--white);
     border-radius: 20px;
-    width: 20.4375rem;
-    padding: 0 24px 45px 24px;
-}
-
-.faq__hero {
-    width: 100%;
+    width: 327px;
+    padding: 0 24px 46px 24px;
+    /* outline: greenyellow solid; */
     position: relative;
-}
+} 
 
-.faq__hero-background {
-    height: 11.3125rem;
-    width: 17.4375rem;
-    background-image: url(images/illustration-woman-online-mobile.svg);
-    background-repeat: no-repeat;
+.faq__hero-mobile {
+    /* outline: orangered solid; */
+    /* new styles for images */
+    width: 240px;
+    height: 215px;
+    background-image: 
+        url(images/illustration-woman-online-mobile.svg),
+        url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
     position: absolute;
-    top: -6.6875rem;
-    left: 1.3125rem;
+    top: -110px;
+    /* left: ; */
+    background-position-y: 0, 110px;
 }
-
-.faq__hero-background::before {
-    content: '';
-    background-image: url(images/bg-pattern-mobile.svg);
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 108px;
-    left: 0px;
-    padding: 200px;
-}
-
-/* .faq__hero-shadow {
-    height: 104px;
-    width: 279px;
-} */
 
 .faq__content {
     width: 100%;
-    padding-top: 113px;
     align-content: center;
+    padding: 113px 0 0 0;
 }
 
 .faq__title {
@@ -103,7 +88,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 17px 0;
+    padding: 17px 0 17px 0;
     cursor: pointer;
     user-select: none;
 }
@@ -180,38 +165,42 @@ input:checked ~ .faq__answer {
         grid-template-rows: 1fr;
         width: 920px;
         border-radius: 20px;
-        padding: 45px 0 63px 0;
+        padding: 63px 0 77px 0;
+        /* background-image:
+            url(images/bg-pattern-desktop.svg),
+            url(images/illustration-woman-online-desktop.svg);
+            background-repeat: no-repeat, no-repeat;
+        background-position-x: -577px, -85px;
+        background-position-y: -295px, 70px; */
+        background-image:
+            url(images/illustration-woman-online-desktop.svg),
+            url(images/bg-pattern-desktop.svg);
+            background-repeat: no-repeat, no-repeat;
+        background-position-x: -85px, -577px;
+        background-position-y: 70px, -295px;
     }
     
-    .faq__hero-background {
-        background-image: url(images/illustration-woman-online-desktop.svg);
-        background-repeat: no-repeat;
-        height: 360px;
-        width: 100%;
-        position: relative;
+    .faq__hero-mobile {
+        width: 0;
+        height: 0;
+        background-image: none;
         top: 0;
-        left: 0;
-        background-position-x: -85px;
+        background-position-y: 0, 0;
     }
 
-    .faq__hero-background::after {
-        position: absolute;
+    .faq__hero-desktop {
         background-image: url(images/illustration-box-desktop.svg);
-    }
-    
-    .faq__hero-shadow {
-        background-image: url(images/bg-pattern-desktop.svg);
         background-repeat: no-repeat;
-        height: 104px;
-        width: 100%;
-        /* position: absolute;
-        left: 18px; */
-        background-position-y: -40px;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        top: 32px;
+        left: -93px;
     }
 
     .faq__content {
         width: 100%;
-        padding: 0 113px 0 14px;
+        padding: 0 113px 0 15px;
     }
 
     .faq__title {
@@ -223,5 +212,9 @@ input:checked ~ .faq__answer {
 
     .faq__label {
         font-size: .9rem;
+    }
+
+    input:checked ~ .faq__answer {
+        margin: -6px 0 0 0;
     }
 }
