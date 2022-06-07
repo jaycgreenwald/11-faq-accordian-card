@@ -43,12 +43,17 @@ body {
     border-radius: 20px;
     width: 327px;
     padding: 0 24px 46px 24px;
-    /* outline: greenyellow solid; */
     position: relative;
+    box-shadow:
+        0px 0.8px 1.2px rgba(0, 0, 0, 0.022),
+        0px 2.6px 2.9px rgba(0, 0, 0, 0.032),
+        0px 6.1px 5.4px rgba(0, 0, 0, 0.04),
+        0px 12.6px 9.6px rgba(0, 0, 0, 0.048),
+        0px 26.7px 18px rgba(0, 0, 0, 0.056),
+        0px 71px 43px rgba(0, 0, 0, 0.07);
 } 
 
 .faq__hero-mobile {
-    /* outline: orangered solid; */
     width: 240px;
     height: 215px;
     background-image: 
@@ -105,7 +110,7 @@ input {
     font-size: .8rem;
     max-height: 0;
     color: var(--very-dark-desaturated-blue);
-    /* transition: all 0.1s; */
+    transition: all 0.1s;
     display: none;
 }
 
@@ -143,7 +148,7 @@ input:checked ~ .faq__answer {
     
 .attribution a {
     box-shadow: inset 0 0 0 0 hsl(228, 45%, 44%);
-    color: hsl(228, 45%, 44%); 
+    color: var(--soft-red); 
     text-decoration: none;
     margin: 0 -.25rem;
     padding: 0 .25rem;
